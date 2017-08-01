@@ -5,18 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class backgroundmanager : MonoBehaviour {
 
-	public float scrollSpeed = 0.5f;
-	private Vector2 Offset;
-
-	// Use this for initialization
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
+	public float ScrollSpeed = 0.5f;
+	private Vector2 _offset;
+    
 	void Update ()
     { 
-		Offset = new Vector2(Time.time * scrollSpeed, 0);
-	    GetComponent<Renderer>().material.mainTextureOffset = Offset;﻿
+		_offset = new Vector2(Time.time * ScrollSpeed, 0);
+	    GetComponent<Renderer>().material.mainTextureOffset = _offset;﻿
 	}
 }

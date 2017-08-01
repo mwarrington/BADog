@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class playergravity : MonoBehaviour
 {
-    public AudioSource bark;
+    private AudioSource _bark;
 
     // Use this for initialization
     void Start () {
-		
+        _bark = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -17,7 +17,7 @@ public class playergravity : MonoBehaviour
 	    if (Input.GetKeyDown(KeyCode.Space))
 	    {
 	        Physics2D.gravity *= -1;
-            bark.Play();
+            _bark.Play();
         }
 
     }

@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class start : MonoBehaviour {
 
-    public AudioSource bark;
+    private AudioSource _bark;
 
     // Use this for initialization
     void Start () {
-		
+        _bark = this.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -17,7 +17,7 @@ public class start : MonoBehaviour {
 	    if (Input.GetKeyDown(KeyCode.Space))
 	    {
 	        SceneManager.LoadScene("Second");
-            bark.Play();
+            _bark.Play();
         }
     }
 }

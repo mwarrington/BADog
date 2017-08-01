@@ -3,9 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class stagemanager: MonoBehaviour {
-
-    public GameObject stage;
-    public float movementSpeed = 1;
+    
     public GameObject[] StagePrefabs;
 
     private float _timer = 34f;

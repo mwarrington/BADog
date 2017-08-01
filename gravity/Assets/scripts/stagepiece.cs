@@ -5,7 +5,7 @@ using UnityEngine;
 public class stagepiece : MonoBehaviour
 {
 
-    public float movementSpeed = 1;
+    public float MovementSpeed = 1;
 
     // Use this for initialization
     void Start()
@@ -15,6 +15,6 @@ public class stagepiece : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * movementSpeed, Space.World);
+        transform.Translate(Vector3.left * Time.deltaTime * MovementSpeed, Space.World);
     }
 }
