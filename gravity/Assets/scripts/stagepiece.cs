@@ -5,7 +5,7 @@ using UnityEngine;
 public class stagepiece : MonoBehaviour
 {
 
-    public float MovementSpeed = 1;
+    public float MovementSpeed = 3;
 
     // Use this for initialization
     void Start()

@@ -1,0 +1,14 @@
+(i)0;
+(s)Medical Ethics Dog;
+(l)It's not easy being Bodily Autonomy Dog but you gotta stand against up against those who would deny the value of medical ethics and the bodily autonomy of everyone.;
+(n)1;
+
+(i)1;
+(s)Medical Ethics Dog;
+(l)You'll need to know what you're up against, though, so let's go over some of the obstacles that have been put up against bodily autonomy and what you can do to combat those obstacles.;
+(n)2;
+
+(i)2;
+(s)Medical Ethics Dog;
+(l)If you get scared and don't know what to do just remember to listen to your heart. You have the heart of a champion!;
+(n)0;
