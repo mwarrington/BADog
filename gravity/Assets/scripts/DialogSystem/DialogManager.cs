@@ -6,10 +6,14 @@ public class DialogManager : MonoBehaviour
 {
     public TextAsset CurrentDialogDatabase;
     public List<DialogLine> CurrentDialogLines;
+    public List<DialogOptions> CurrentDialogOptionsList;
 
-    private int _currentLine;
+    private int _currentLine,
+                _currentDO;
     private bool _parsingSpeaker,
-                 _parsingLine;
+                 _parsingLine,
+                 _parsingDO1,
+                 _parsingDO2;
     
     void Start()
     {
@@ -32,9 +36,18 @@ public class DialogManager : MonoBehaviour
                 {
                     i += 2;
 
-                    CurrentDialogLines.Add(new DialogLine(int.Parse(CurrentDialogDatabase.text[i].ToString()), "", "", -1));
                     _currentLine = int.Parse(CurrentDialogDatabase.text[i].ToString());
-                    DialogLine dl = CurrentDialogLines[_currentLine];
+                    CurrentDialogLines.Add(new DialogLine(_currentLine, "", "", -1));
+                    i += 2;
+                    continue;
+                }
+
+                if (CurrentDialogDatabase.text[i] == 'd')
+                {
+                    i += 2;
+
+                    _currentDO = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                    CurrentDialogOptionsList.Add(new DialogOptions(_currentDO, -1, "", ""));
                     i += 2;
                     continue;
                 }
@@ -56,8 +69,40 @@ public class DialogManager : MonoBehaviour
                 if(CurrentDialogDatabase.text[i] == 'n')
                 {
                     i += 2;
-                    CurrentDialogLines[_currentLine].NextIndex = int.Parse(CurrentDialogDatabase.text[i].ToString());
+
+                    if (CurrentDialogDatabase.text[i] != '!')
+                        CurrentDialogLines[_currentLine].NextDialogOptionsIndex = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                    else
+                        CurrentDialogLines[_currentLine].NextDialogOptionsIndex = -1;
+
                     i += 2;
+                    continue;
+                }
+                
+                if (CurrentDialogDatabase.text[i] == '1')
+                {
+                    _parsingDO1 = true;
+                    i++;
+                    continue;
+                } 
+                if (CurrentDialogDatabase.text[i] == '2')
+                {
+                    _parsingDO2 = true;
+                    i++;
+                    continue;
+                }
+
+                if (CurrentDialogDatabase.text[i] == 'f')
+                {
+                    i += 2;
+
+                    if (CurrentDialogDatabase.text[i] != '!')
+                        CurrentDialogOptionsList[_currentDO].FollowUpLine = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                    else
+                        CurrentDialogOptionsList[_currentDO].FollowUpLine = -1;
+
+                    i += 2;
+                    continue;
                 }
             }
             else if(_parsingSpeaker)
@@ -65,18 +110,28 @@ public class DialogManager : MonoBehaviour
                 if (CurrentDialogDatabase.text[i] != ';')
                     CurrentDialogLines[_currentLine].Speaker += CurrentDialogDatabase.text[i];
                 else
-                {
                     _parsingSpeaker = false;
-                }
             }
             else if(_parsingLine)
             {
                 if (CurrentDialogDatabase.text[i] != ';')
                     CurrentDialogLines[_currentLine].LineText += CurrentDialogDatabase.text[i];
                 else
-                {
                     _parsingLine = false;
-                }
+            }
+            else if(_parsingDO1)
+            {
+                if (CurrentDialogDatabase.text[i] != ';')
+                    CurrentDialogOptionsList[_currentDO].DO1 += CurrentDialogDatabase.text[i];
+                else
+                    _parsingDO1 = false;
+            }
+            else if (_parsingDO2)
+            {
+                if (CurrentDialogDatabase.text[i] != ';')
+                    CurrentDialogOptionsList[_currentDO].DO2 += CurrentDialogDatabase.text[i];
+                else
+                    _parsingDO2 = false;
             }
         }
     }
