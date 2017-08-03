@@ -1,12 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class stagemanager: MonoBehaviour {
+public class stagemanager: MonoBehaviour, iPausable {
     
     public GameObject[] StagePrefabs;
 
     private float _timer = 34f;
+    private bool _paused = false;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -26,7 +28,7 @@ public class stagemanager: MonoBehaviour {
     private void AddNewStagePiece()
     {
         Instantiate(
-            StagePrefabs[Random.Range(0, StagePrefabs.Length)],
+            StagePrefabs[UnityEngine.Random.Range(0, StagePrefabs.Length)],
             new Vector3(18, -5, 0),
             Quaternion.identity);
     }
@@ -45,7 +47,9 @@ public class stagemanager: MonoBehaviour {
 
     void Update()
     {
-        _timer -= Time.deltaTime;
+        if (!_paused)
+            _timer -= Time.deltaTime;
+
         if (_timer <= 0f)
         {
             if (GameObject.Find("playerdog").transform.position.y > 5)
@@ -64,5 +68,8 @@ public class stagemanager: MonoBehaviour {
         }
     }
 
-   
+    public void TogglePause()
+    {
+        _paused = !_paused; 
+    }
 }

@@ -6,7 +6,8 @@
 (d)0;
 (1)I am ready!;
 (2)Bark bark!;
-(f)1;
+(o)1;
+(t)1;
 
 (i)1;
 (s)Medical Ethics Dog;
@@ -16,7 +17,8 @@
 (d)1;
 (1)Gotta beat obstacles!;
 (2)Bark bark!;
-(f)2;
+(o)1;
+(t)!;
 
 (i)2;
 (s)Medical Ethics Dog;

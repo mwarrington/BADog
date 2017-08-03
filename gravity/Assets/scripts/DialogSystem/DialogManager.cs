@@ -47,7 +47,7 @@ public class DialogManager : MonoBehaviour
                     i += 2;
 
                     _currentDO = int.Parse(CurrentDialogDatabase.text[i].ToString());
-                    CurrentDialogOptionsList.Add(new DialogOptions(_currentDO, -1, "", ""));
+                    CurrentDialogOptionsList.Add(new DialogOptions(_currentDO, -1, -1, "", ""));
                     i += 2;
                     continue;
                 }
@@ -92,14 +92,27 @@ public class DialogManager : MonoBehaviour
                     continue;
                 }
 
-                if (CurrentDialogDatabase.text[i] == 'f')
+                if (CurrentDialogDatabase.text[i] == 'o')
                 {
                     i += 2;
 
                     if (CurrentDialogDatabase.text[i] != '!')
-                        CurrentDialogOptionsList[_currentDO].FollowUpLine = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                        CurrentDialogOptionsList[_currentDO].FollowUpLine1 = int.Parse(CurrentDialogDatabase.text[i].ToString());
                     else
-                        CurrentDialogOptionsList[_currentDO].FollowUpLine = -1;
+                        CurrentDialogOptionsList[_currentDO].FollowUpLine1 = -1;
+
+                    i += 2;
+                    continue;
+                }
+
+                if (CurrentDialogDatabase.text[i] == 't')
+                {
+                    i += 2;
+
+                    if (CurrentDialogDatabase.text[i] != '!')
+                        CurrentDialogOptionsList[_currentDO].FollowUpLine2 = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                    else
+                        CurrentDialogOptionsList[_currentDO].FollowUpLine2 = -1;
 
                     i += 2;
                     continue;
