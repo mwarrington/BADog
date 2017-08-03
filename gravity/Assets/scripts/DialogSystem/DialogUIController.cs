@@ -75,9 +75,9 @@ public class DialogUIController : MonoBehaviour
 
     public void OpenDialog(int index)
     {
-        //Pause
         _currentDialogLine = _dialogManager.CurrentDialogLines[index];
         _dialogBoxObject.SetActive(true);
+        _dialogOptionsObject.SetActive(false);
         _inDialogBox = true;
 
         _textBoxText.text = _currentDialogLine.LineText;
@@ -87,6 +87,7 @@ public class DialogUIController : MonoBehaviour
     {
         _curretDialogOptions = _dialogManager.CurrentDialogOptionsList[index];
         _dialogOptionsObject.SetActive(true);
+        _dialogBoxObject.SetActive(false);
         _inDialogOptions = true;
         option1Highlighted = true;
 
@@ -113,8 +114,7 @@ public class DialogUIController : MonoBehaviour
                 }
             }
         }
-
-        if (_inDialogOptions)
+        else if (_inDialogOptions)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
             {

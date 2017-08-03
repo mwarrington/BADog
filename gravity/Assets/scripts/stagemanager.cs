@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class stagemanager: MonoBehaviour, iPausable {
-    
+
+    private GameManager _theGameManager;
     public GameObject[] StagePrefabs;
 
     private float _timer = 34f;
@@ -21,6 +22,7 @@ public class stagemanager: MonoBehaviour, iPausable {
 
     private void DestroyOldSP(Collider2D col)
     {
+        _theGameManager.RemoveFromPausables(col.GetComponent<iPausable>());
             Destroy(col.transform.parent.gameObject);
         
     }
@@ -35,6 +37,9 @@ public class stagemanager: MonoBehaviour, iPausable {
 
     void Start()
     {
+        _theGameManager = GameManager.TheGameManager;
+        _theGameManager.AddToPausables(this);
+
         if (Physics2D.gravity.y > 0f)
         {
             GameObject.Find("arrow").transform.Rotate(-180f, 0f, 0f);

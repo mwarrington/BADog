@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class playergravity : MonoBehaviour, iPausable
 {
+    private GameManager _theGameManager;
     private Rigidbody2D _myRigidbody;
     private AudioSource _bark;
     private float _lastGravityValue,
@@ -32,6 +33,8 @@ public class playergravity : MonoBehaviour, iPausable
     void Start () {
         _myRigidbody = this.GetComponent<Rigidbody2D>();
         _bark = GetComponent<AudioSource>();
+        _theGameManager = GameManager.TheGameManager;
+        _theGameManager.AddToPausables(this);
 	}
 	
 	// Update is called once per frame

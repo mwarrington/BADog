@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class stagepiece : MonoBehaviour, iPausable
 {
+    private GameManager _theGameManager;
     private bool _paused = false;
     public float MovementSpeed = 3;
 
@@ -16,6 +17,8 @@ public class stagepiece : MonoBehaviour, iPausable
     // Use this for initialization
     void Start()
     {
+        _theGameManager = GameManager.TheGameManager;
+        _theGameManager.AddToPausables(this);
     }
     
     // Update is called once per frame

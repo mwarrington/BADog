@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class arrowflip : MonoBehaviour, iPausable
 {
+    private GameManager _theGameManager;
     private Transform _dogpos;
     private bool _paused = false;
 
@@ -16,6 +17,8 @@ public class arrowflip : MonoBehaviour, iPausable
     void Start ()
 	{
 	    _dogpos = GameObject.Find("playerdog").transform;
+        _theGameManager = GameManager.TheGameManager;
+        _theGameManager.AddToPausables(this);
 	}
 	
     void Update()

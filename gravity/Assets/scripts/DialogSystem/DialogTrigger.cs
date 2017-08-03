@@ -4,32 +4,28 @@ using UnityEngine;
 
 public class DialogTrigger : MonoBehaviour
 {
-    private List<iPausable> _pausables;
+    private GameManager _theGameManager;
     private DialogUIController _dialogUIController;
     public int DialogIndex;
 
     private void Start()
     {
         _dialogUIController = FindObjectOfType<DialogUIController>();
-        _pausables = new List<iPausable>();
-        //HACK: ADD THIS TO EVENTAL GAME MANAGER
-        _pausables.Add((iPausable)FindObjectOfType<stagemanager>());
-        _pausables.Add((iPausable)FindObjectOfType<playergravity>());
-        _pausables.Add((iPausable)FindObjectOfType<stagepiece>());
-        _pausables.Add((iPausable)FindObjectOfType<arrowflip>());
+        _theGameManager = GameManager.TheGameManager;
     }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Y))
         {
+            _dialogUIController.OpenDialog(DialogIndex);
             WorldPause();
         }
     }
 
     private void WorldPause()
     {
-        foreach (iPausable ip in _pausables)
+        foreach (iPausable ip in _theGameManager.AllPausables)
         {
             ip.TogglePause();
         }
