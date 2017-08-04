@@ -9,6 +9,7 @@ public class DialogLine
     public string LineText;
     public int Index;
     public int NextDialogOptionsIndex;
+    public int NextDialogLine = -1;
 
     //A standard contructor, sets values of dialog lines when they are created/this called
     public DialogLine(int index, string speaker, string lineText, int nextDialogOptionsIndex)

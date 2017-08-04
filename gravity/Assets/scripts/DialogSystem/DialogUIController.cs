@@ -20,7 +20,7 @@ public class DialogUIController : MonoBehaviour
             if (_option1Highlighted != value)
             {
                 //And the value is true...
-                if(value)
+                if (value)
                 {
                     //Make the first dialog option appear selected
                     _dialogOption1.image.color = Color.white;
@@ -47,12 +47,15 @@ public class DialogUIController : MonoBehaviour
         }
     }
 
+    public float TypeSpeed = 1;
+
+    private IEnumerator _typingCoroutine;
     private DialogManager _dialogManager;
     private GameObject _dialogBoxObject,
                        _dialogOptionsObject;
     private DialogLine _currentDialogLine;
     private DialogOptions _curretDialogOptions;
-    
+
     //Private fields for the dialog UI components
     private Button _dialogOption1,
                    _dialogOption2;
@@ -64,7 +67,8 @@ public class DialogUIController : MonoBehaviour
     private Vector3 _textBoxToNPCPos;
     private bool _inDialogBox,
                  _inDialogOptions,
-                 _option1Highlighted;
+                 _option1Highlighted,
+                 _isTyping;
 
     void Start()
     {
@@ -96,7 +100,10 @@ public class DialogUIController : MonoBehaviour
         _inDialogBox = true;
         _inDialogOptions = false;
 
-        _textBoxText.text = _currentDialogLine.LineText;
+        _isTyping = true;
+        _textBoxText.text = "";
+        _typingCoroutine = TypeText();
+        StartCoroutine(_typingCoroutine);
     }
 
     //Call this method which takes an int that represents the desired dialog options index to display
@@ -123,14 +130,28 @@ public class DialogUIController : MonoBehaviour
     {
         if (_inDialogBox) //This bit handles player inputs while in a dialog box
         {
-            //If the player presses space we will either proceed to the designated next dialog options or end the dialog
-            if (Input.GetKeyDown(KeyCode.Space))
+            //First checks to see if you're typing if so we end the type coroutine and fill in the text box.
+            if (_isTyping && Input.GetKeyDown(KeyCode.Space))
             {
-                if (_currentDialogLine.NextDialogOptionsIndex != -1)
-                    OpenDialogOptions(_currentDialogLine.NextDialogOptionsIndex);
+                StopCoroutine(_typingCoroutine);
+                _textBoxText.text = "";
+                _textBoxText.text = _currentDialogLine.LineText;
+                _isTyping = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.Space))//If the player presses space we will either proceed to the designated next dialog options or end the dialog
+            {
+                if (_currentDialogLine.NextDialogLine == -1)
+                {
+                    if (_currentDialogLine.NextDialogOptionsIndex != -1)
+                        OpenDialogOptions(_currentDialogLine.NextDialogOptionsIndex);
+                    else
+                    {
+                        EndDialog();
+                    }
+                }
                 else
                 {
-                    EndDialog();
+                    OpenDialog(_currentDialogLine.NextDialogLine);
                 }
             }
         }
@@ -177,5 +198,17 @@ public class DialogUIController : MonoBehaviour
         GameManager.TheGameManager.WorldPause();
         _dialogBoxObject.SetActive(false);
         _dialogOptionsObject.SetActive(false);
+    }
+
+    IEnumerator TypeText()
+    {
+        for (int i = 0; i < _currentDialogLine.LineText.Length; i++) //char c in _currentConvo.MyLines[_currentLineIndex].LineText.ToCharArray())
+        {
+            _textBoxText.text += _currentDialogLine.LineText[i];
+
+            yield return new WaitForSeconds(TypeSpeed);
+        }
+
+        _isTyping = false;
     }
 }

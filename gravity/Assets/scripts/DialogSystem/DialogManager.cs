@@ -5,8 +5,8 @@ using UnityEngine;
 public class DialogManager : MonoBehaviour
 {
     public TextAsset CurrentDialogDatabase;
-    public List<DialogLine> CurrentDialogLines;
-    public List<DialogOptions> CurrentDialogOptionsList;
+    public List<DialogLine> CurrentDialogLines = new List<DialogLine>();
+    public List<DialogOptions> CurrentDialogOptionsList = new List<DialogOptions>();
 
     private int _currentLine,
                 _currentDO;
@@ -78,10 +78,15 @@ public class DialogManager : MonoBehaviour
                     i += 2;
 
                     //if this value is set to '!' the next dialog options value will be set at -1 which means this dialog line ends the dialog
-                    if (CurrentDialogDatabase.text[i] != '!')
-                        CurrentDialogLines[_currentLine].NextDialogOptionsIndex = int.Parse(CurrentDialogDatabase.text[i].ToString());
-                    else
+                    if (CurrentDialogDatabase.text[i] == '!')
                         CurrentDialogLines[_currentLine].NextDialogOptionsIndex = -1;
+                    else if(CurrentDialogDatabase.text[i] == '*')
+                    {
+                        i++;
+                        CurrentDialogLines[_currentLine].NextDialogLine = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                    }
+                    else
+                        CurrentDialogLines[_currentLine].NextDialogOptionsIndex = int.Parse(CurrentDialogDatabase.text[i].ToString());
 
                     i += 2;
                     continue;
