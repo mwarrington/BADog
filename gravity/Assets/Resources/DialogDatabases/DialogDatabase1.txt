@@ -70,7 +70,7 @@
 (i)9;
 (s)Medical Ethics Dog!;
 (l)All good dogs love medical ethics! Let’s go!;
-(n)3;
+(n)4;
 
 (d)4;
 (1)Start;
