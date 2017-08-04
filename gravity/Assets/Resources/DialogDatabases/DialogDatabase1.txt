@@ -1,26 +1,79 @@
 (i)0;
-(s)Medical Ethics Dog;
-(l)It's not easy being Bodily Autonomy Dog but you gotta stand against up against those who would deny the value of medical ethics and the bodily autonomy of everyone.;
+(s)Medical Ethics Dog!;
+(l)Hello, I’m Medical Ethics Dog! The moral practice of clinical medicine and scientific research really gets my tail wagging.;
 (n)0;
 
 (d)0;
-(1)I am ready!;
-(2)Bark bark!;
+(1)Hello!;
+(2)Hi there!;
 (o)1;
 (t)1;
 
 (i)1;
-(s)Medical Ethics Dog;
-(l)You'll need to know what you're up against, though, so let's go over some of the obstacles that have been put up against bodily autonomy and what you can do to combat those obstacles.;
+(s)Medical Ethics Dog!;
+(l)I heard you’re pregnant—that’s so cool! What a marvel of the canine body. You might be interested in reproductive justice, a set of ideals developed by human women of color in the late 1980s. According to the SisterSong collective, reproductive justice holds that everyone has the right to:;
+(n)*2;
+
+(i)2;
+(s)Medical Ethics Dog!;
+(l)1. Decide if and when they will have a baby and the conditions under which they will give birth;
+(n)*3;
+
+(i)3;
+(s)Medical Ethics Dog!;
+(l)2. Decide if they will not have a baby and their options for preventing or ending a pregnancy;
+(n)*4;
+
+(i)4;
+(s)Medical Ethics Dog!;
+(l)3. Parent the children they already have with the necessary social supports in safe environments and healthy communities, and without fear of violence from individuals or the government;
+(n)*5;
+
+(i)5;
+(s)Medical Ethics Dog!;
+(l)Neat, right?!;
 (n)1;
 
 (d)1;
-(1)Gotta beat obstacles!;
-(2)Bark bark!;
-(o)2;
-(t)!;
+(1)Yeah, wow!;
+(2)That makes sense!;
+(o)6;
+(t)6;
 
-(i)2;
-(s)Medical Ethics Dog;
-(l)If you get scared and don't know what to do just remember to listen to your heart. You have the heart of a champion!;
-(n)!;
+(i)6;
+(s)Medical Ethics Dog!;
+(l)Anyways, I’ve been barking enough. You’ve got a journey ahead, and luckily your extreme bodily autonomy means that you can flip gravity at will. Just hit the space bar!;
+(n)2;
+
+(d)2;
+(1)What is bodily autonomy?;
+(2)Ok I’m ready!;
+(o)7;
+(t)9;
+
+(i)7;
+(s)Medical Ethics Dog!;
+(l)Oh, I always forget to explain that one. It’s just so obvious, sorry! Bodily autonomy is super simple: it’s the idea that you should be able to decide what happens to your own body.;
+(n)*8;
+
+(i)8;
+(s)Medical Ethics Dog!;
+(l)For reproductive justice, this includes things like access to birth control so you can decide whether or not you you’d like to be pregnant. Got it?;
+(n)3;
+
+(d)3;
+(1)Yep!;
+(2)Uh huh!;
+(o)9;
+(t)9;
+
+(i)9;
+(s)Medical Ethics Dog!;
+(l)All good dogs love medical ethics! Let’s go!;
+(n)3;
+
+(d)4;
+(1)Start;
+(2)I'm a good dog!;
+(o)!;
+(t)!;
