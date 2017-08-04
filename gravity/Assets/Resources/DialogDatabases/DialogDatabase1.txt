@@ -17,7 +17,7 @@
 (d)1;
 (1)Gotta beat obstacles!;
 (2)Bark bark!;
-(o)1;
+(o)2;
 (t)!;
 
 (i)2;

@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogLine : MonoBehaviour
+//This is the class for dialog lines
+public class DialogLine
 {
     public string Speaker;
     public string LineText;
     public int Index;
     public int NextDialogOptionsIndex;
 
+    //A standard contructor, sets values of dialog lines when they are created/this called
     public DialogLine(int index, string speaker, string lineText, int nextDialogOptionsIndex)
     {
         Index = index;

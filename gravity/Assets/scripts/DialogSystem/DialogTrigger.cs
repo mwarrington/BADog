@@ -19,15 +19,7 @@ public class DialogTrigger : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Y))
         {
             _dialogUIController.OpenDialog(DialogIndex);
-            WorldPause();
-        }
-    }
-
-    private void WorldPause()
-    {
-        foreach (iPausable ip in _theGameManager.AllPausables)
-        {
-            ip.TogglePause();
+            _theGameManager.WorldPause();
         }
     }
 
