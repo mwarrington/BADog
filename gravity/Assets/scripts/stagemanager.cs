@@ -13,7 +13,9 @@ public class stagemanager: MonoBehaviour, iPausable {
 
     void OnTriggerEnter2D(Collider2D col)
     {
+
         DestroyOldSP(col);
+
         if (_timer > 10f)
         {
             AddNewStagePiece();
@@ -23,8 +25,8 @@ public class stagemanager: MonoBehaviour, iPausable {
     private void DestroyOldSP(Collider2D col)
     {
         _theGameManager.RemoveFromPausables(col.GetComponent<iPausable>());
-            Destroy(col.transform.parent.gameObject);
-        
+        Destroy(col.transform.parent.gameObject);
+
     }
 
     private void AddNewStagePiece()
