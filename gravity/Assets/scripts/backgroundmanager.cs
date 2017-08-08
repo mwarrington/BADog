@@ -1,33 +1,26 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class backgroundmanager : MonoBehaviour, iPausable {
+public class BackgroundManager : MonoBehaviour {
 
-    private GameManager _theGameManager;
-	public float ScrollSpeed = 0.5f;
-	private Vector2 _offset;
-    private bool _paused;
+    public GameObject[] BackgroundPrefabs;
 
-    private void Start()
+    void DestroyAdd(Collider2D col)
     {
-        _theGameManager = GameManager.TheGameManager;
-        _theGameManager.AddToPausables(this);
+        Destroy(col.transform.gameObject);
+
+        Instantiate(
+            BackgroundPrefabs[UnityEngine.Random.Range(0, BackgroundPrefabs.Length)],
+            new Vector3(19, 0, 0),
+            Quaternion.identity
+        );
     }
 
-    public void TogglePause()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        _paused = !_paused;
-    }
-
-    void Update ()
-    {
-        if (!_paused)
         {
-            _offset = new Vector2(Time.time * ScrollSpeed, 0);
-            GetComponent<Renderer>().material.mainTextureOffset = _offset;
+            DestroyAdd(col);
         }
-	}
+    }
 }

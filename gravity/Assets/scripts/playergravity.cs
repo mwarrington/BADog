@@ -15,6 +15,7 @@ public class playergravity : MonoBehaviour, iPausable
     public void TogglePause()
     {
         _paused = !_paused;
+
         if (_paused)
         {
             _lastGravityValue = Physics2D.gravity.y;

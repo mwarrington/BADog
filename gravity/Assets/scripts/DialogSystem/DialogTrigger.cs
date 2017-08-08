@@ -7,6 +7,7 @@ public class DialogTrigger : MonoBehaviour
     private GameManager _theGameManager;
     private DialogUIController _dialogUIController;
     public int DialogIndex;
+    private bool _dialogPlayed;
 
     private void Start()
     {
@@ -16,8 +17,9 @@ public class DialogTrigger : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Y))
-        {
+       if (!_dialogPlayed)
+       {
+           _dialogPlayed = !_dialogPlayed;
             _dialogUIController.OpenDialog(DialogIndex);
             _theGameManager.WorldPause();
         }

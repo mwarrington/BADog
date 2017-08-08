@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     static public GameManager TheGameManager;
+
     //A static field that contains all active pausable scripts
     static List<iPausable> allPausables = new List<iPausable>();
 
