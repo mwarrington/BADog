@@ -11,25 +11,30 @@
 
 (i)1;
 (s)Medical Ethics Dog!;
-(l)I heard you’re pregnant—that’s so cool! What a marvel of the canine body. You might be interested in reproductive justice, a set of ideals developed by human women of color in the late 1980s. According to the SisterSong collective, reproductive justice holds that everyone has the right to:;
+(l)I heard you’re pregnant—that’s so cool! What a marvel of the canine body.;
 (n)*2;
 
 (i)2;
 (s)Medical Ethics Dog!;
-(l)1. Decide if and when they will have a baby and the conditions under which they will give birth;
+(l)You might be interested in reproductive justice, a set of ideals developed by human women of color in the late 1980s. According to the SisterSong collective, reproductive justice holds that everyone has the right to:;
 (n)*3;
 
 (i)3;
 (s)Medical Ethics Dog!;
-(l)2. Decide if they will not have a baby and their options for preventing or ending a pregnancy;
+(l)1. Decide if and when they will have a baby and the conditions under which they will give birth;
 (n)*4;
 
 (i)4;
 (s)Medical Ethics Dog!;
-(l)3. Parent the children they already have with the necessary social supports in safe environments and healthy communities, and without fear of violence from individuals or the government;
+(l)2. Decide if they will not have a baby and their options for preventing or ending a pregnancy;
 (n)*5;
 
 (i)5;
+(s)Medical Ethics Dog!;
+(l)3. Parent the children they already have with the necessary social supports in safe environments and healthy communities, and without fear of violence from individuals or the government;
+(n)*6;
+
+(i)6;
 (s)Medical Ethics Dog!;
 (l)Neat, right?!;
 (n)1;
@@ -37,10 +42,10 @@
 (d)1;
 (1)Yeah, wow!;
 (2)That makes sense!;
-(o)6;
-(t)6;
+(o)7;
+(t)7;
 
-(i)6;
+(i)7;
 (s)Medical Ethics Dog!;
 (l)Anyways, I’ve been barking enough. You’ve got a journey ahead, and luckily your extreme bodily autonomy means that you can flip gravity at will. Just hit the space bar!;
 (n)2;
@@ -48,17 +53,12 @@
 (d)2;
 (1)What is bodily autonomy?;
 (2)Ok I’m ready!;
-(o)7;
+(o)8;
 (t)9;
-
-(i)7;
-(s)Medical Ethics Dog!;
-(l)Oh, I always forget to explain that one. It’s just so obvious, sorry! Bodily autonomy is super simple: it’s the idea that you should be able to decide what happens to your own body.;
-(n)*8;
 
 (i)8;
 (s)Medical Ethics Dog!;
-(l)For reproductive justice, this includes things like access to birth control so you can decide whether or not you you’d like to be pregnant. Got it?;
+(l)Bodily autonomy is super simple: it’s the idea that you should be able to decide what happens to your own body. For reproductive justice, this includes things like access to birth control so you can decide whether or not you you’d like to be pregnant. Got it?;
 (n)3;
 
 (d)3;
