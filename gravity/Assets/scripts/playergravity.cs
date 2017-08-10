@@ -43,7 +43,7 @@ public class playergravity : MonoBehaviour, iPausable
 
 	    if (Input.GetKeyDown(KeyCode.Space) && !_paused)
 	    {
-	        Physics2D.gravity *= -1;
+	        _myRigidbody.gravityScale *= -1;
             _bark.Play();
         }
 

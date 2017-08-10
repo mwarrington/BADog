@@ -65,7 +65,8 @@ public class DialogUIController : MonoBehaviour
                  _dialogOption2Text;
 
     private Vector3 _textBoxToNPCPos;
-    private bool _inDialogBox,
+    private bool _inDialog,
+                 _inDialogBox,
                  _inDialogOptions,
                  _option1Highlighted,
                  _isTyping;
@@ -94,6 +95,7 @@ public class DialogUIController : MonoBehaviour
     //Call this method which takes an int that represents the desired dialog line index at which to begin/continue the dialog.
     public void OpenDialog(int index)
     {
+        _inDialog = true;
         _currentDialogLine = _dialogManager.CurrentDialogLines[index];
         _dialogBoxObject.SetActive(true);
         _dialogOptionsObject.SetActive(false);
@@ -122,7 +124,8 @@ public class DialogUIController : MonoBehaviour
 
     private void Update()
     {
-        InputHandler();
+        if (_inDialog)
+            InputHandler();
     }
 
     //This method contains all code related to player inputs for the dialog ui components
@@ -195,6 +198,7 @@ public class DialogUIController : MonoBehaviour
     //Call this method to end dialog. It sets both dialog ui objects to be inactive and unpauses the game
     private void EndDialog()
     {
+        _inDialog = false;
         GameManager.TheGameManager.WorldPause();
         _dialogBoxObject.SetActive(false);
         _dialogOptionsObject.SetActive(false);
