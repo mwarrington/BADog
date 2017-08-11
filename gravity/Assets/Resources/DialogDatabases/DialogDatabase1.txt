@@ -58,7 +58,7 @@
 
 (i)8;
 (s)Medical Ethics Dog!;
-(l)Bodily autonomy is super simple: it’s the idea that you should be able to decide what happens to your own body. For reproductive justice, this includes things like access to birth control so you can decide whether or not you you’d like to be pregnant. Got it?;
+(l)Bodily autonomy is super simple: it’s the idea that you should be able to decide what happens to your own body. For reproductive justice, this includes things like access to birth control so you can decide whether or not you’d like to be pregnant. Got it?;
 (n)3;
 
 (d)3;
