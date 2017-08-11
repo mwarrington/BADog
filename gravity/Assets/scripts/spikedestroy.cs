@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class spikedestroy : MonoBehaviour {
+    
     private MEDogController _meDogController;
     void OnTriggerEnter2D (Collider2D col)
     {
@@ -13,7 +14,7 @@ public class spikedestroy : MonoBehaviour {
             //Destroy(col.gameObject);
             //SceneManager.LoadScene("Start");
             _meDogController = FindObjectOfType<MEDogController>();
-            _meDogController.ObstacleHit(10);
+            _meDogController.ObstacleHit(GameManager.TheGameManager.ObstacleDialogStartIndexes[Random.Range(0, GameManager.TheGameManager.ObstacleDialogStartIndexes.Count)]);
         }
     }
 }
