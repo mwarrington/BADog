@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class playergravity : MonoBehaviour, iPausable
 {
+    public Transform GroundChecker;
+    private Animator _myAnimator;
     private GameManager _theGameManager;
     private Rigidbody2D _myRigidbody;
     private AudioSource _bark;
@@ -15,6 +17,8 @@ public class playergravity : MonoBehaviour, iPausable
     public void TogglePause()
     {
         _paused = !_paused;
+
+        _myAnimator.SetBool("Pause", _paused);
 
         if (_paused)
         {
@@ -36,6 +40,7 @@ public class playergravity : MonoBehaviour, iPausable
     private void Awake()
     {
         _myRigidbody = this.GetComponent<Rigidbody2D>();
+        _myAnimator = GetComponentInChildren<Animator>();
     }
 
     void Start () {
@@ -51,6 +56,8 @@ public class playergravity : MonoBehaviour, iPausable
 	        _myRigidbody.gravityScale *= -1;
             _bark.Play();
         }
+
+        _myAnimator.SetBool("Grounded", Physics2D.OverlapCircle(GroundChecker.position, 0.3f));
 
     }
 }

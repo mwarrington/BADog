@@ -116,6 +116,8 @@ public class DialogUIController : MonoBehaviour
         _textBoxText.text = "";
         _typingCoroutine = TypeText();
         StartCoroutine(_typingCoroutine);
+
+        _medog.Bark();
     }
 
     //Call this method which takes an int that represents the desired dialog options index to display
@@ -215,6 +217,8 @@ public class DialogUIController : MonoBehaviour
 
         if (_restartGame)
             SceneManager.LoadScene("Start");
+        else
+            _medog.HideMeDog();
     }
 
     IEnumerator TypeText()
