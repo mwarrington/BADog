@@ -20,13 +20,7 @@ public class DialogTrigger : MonoBehaviour
        if (!_dialogPlayed)
        {
            _dialogPlayed = !_dialogPlayed;
-            _dialogUIController.OpenDialog(DialogIndex);
-            _theGameManager.WorldPause();
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        _dialogUIController.OpenDialog(DialogIndex);
+           _dialogUIController.OpenDialog(DialogIndex, false);
+       }
     }
 }

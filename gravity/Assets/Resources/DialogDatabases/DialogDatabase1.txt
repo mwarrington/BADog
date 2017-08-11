@@ -11,7 +11,7 @@
 
 (i)1;
 (s)Medical Ethics Dog!;
-(l)I heard you’re pregnant—that’s so cool! What a marvel of the canine body.;
+(l)I heard you’re pregnant — that’s so cool! What a marvel of the canine body.;
 (n)*2;
 
 (i)2;
@@ -80,15 +80,180 @@
 
 (i)10;
 (s)Medical Ethics Dog!;
-(l)Oh no! Bodily Autonomy Dog! has been foiled by High Maternal Mortality Rates.;
-(n)11;
+(l)Oh no! You've been foiled by High Cost of Abortion.;
+(n)*11;
 
 (i)11;
 (s)Medical Ethics Dog!;
-(l)The United States has a shameful history of sterilization and eugenics movements, often targeted at its most vulnerable populations—poor people, immigrants, people of color, the disabled, unmarried women, and the mentally ill.;
-(n)12;
+(l)On 2014, 53% of abortion patients paid out of pocket for the procedure. Abortion costs vary widely from state to state, but the national average for a first-term abortion is $500, and increases from there as the pregnancy progresses.;
+(n)*12;
 
 (i)12;
 (s)Medical Ethics Dog!;
+(l)Federal funding for abortion is currently under threat, meaning these costs could go up.;
+(n)!;
+
+
+
+(i)13;
+(s)Medical Ethics Dog!;
+(l)Oh no! You've been foiled by Limited Access to Abortion.;
+(n)*14;
+
+(i)14;
+(s)Medical Ethics Dog!;
+(l)Legalizing abortion doesn't automatically make it accessible—in 2008, Americans accessing abortion services traveled an average of 30 miles. This can present a particular barrier for low-income and rural women.;
+(n)!;
+
+
+
+(i)15;
+(s)Medical Ethics Dog!;
+(l)Oh no! You've been foiled by Tricky TRAP Laws.;
+(n)*16;
+
+(i)16;
+(s)Medical Ethics Dog!;
+(l)Targeted Regulation of Abortion Provider (TRAP) laws are requirements aimed at shutting down clinics and averting patients rather than protecting them.;
+(n)*17;
+
+(i)17;
+(s)Medical Ethics Dog!;
+(l)These include arbitrary facility requirements, mandatory wait periods or ultrasounds, and holding clinics to the standards of much riskier surgical procedures.;
+(n)!;
+
+
+
+(i)18;
+(s)Medical Ethics Dog!;
+(l)Oh no! You've been foiled by Stigmatization of Abortion.;
+(n)*19;
+
+(i)19;
+(s)Medical Ethics Dog!;
+(l)Cultural and religious stigmatization of abortion means that women may feel obligated to carry their pregnancy to term, even it is directly detrimental to their health, or when they have become pregnant accidentally or due to sexual assault.;
+(n)!;
+
+
+
+(i)20;
+(s)Medical Ethics Dog!;
+(l)Oh no! You've been foiled by Deceptive Crisis Pregnancy Centers.;
+(n)*21;
+
+(i)21;
+(s)Medical Ethics Dog!;
+(l)Crisis pregnancy centers are run by anti-abortion groups posing as medical professionals. They lure pregnant people in and then lie, pressure, and shame them about their reproductive health decisions.;
+(n)*22;
+
+(i)22;
+(s)Medical Ethics Dog!;
+(l)Patients are discouraged from considering abortions, and often delayed until it's too late. There are nearly 4,000 fake clinics in the United States and only 780 real abortion providers.;
+(n)!;
+
+
+
+(i)23;
+(s)Medical Ethics Dog!;
+(l)Oh no! You've been foiled by Coerced Sterilization of the Incarcerated.;
+(n)*24;
+
+(i)24;
+(s)Medical Ethics Dog!;
+(l)A standing order signed in May 2017 allows a Tennessee jail to offer inmates 30 days off their sentences to receive birth control implants or vasectomies.;
+(n)*25;
+
+(i)25;
+(s)Medical Ethics Dog!;
+(l)This is wildly coercive—inmates cannot provide informed consent, and are incentivized to give up their reproductive freedom.;
+(n)!;
+
+
+
+(i)26;
+(s)Medical Ethics Dog!;
+(l)Oh no! You've been foiled by Coerced Sterilization of Trans People.;
+(n)*27;
+
+(i)27;
+(s)Medical Ethics Dog!;
+(l)Many states require a trans person to undergo sex reassignment surgery in order for their gender identity to be legally recognized, which renders them infertile.;
+(n)*28;
+
+(i)28;
+(s)Medical Ethics Dog!;
+(l)In many cases this is coerced sterilization, as not all trans people need or want surgery yet lack of official documents can lead to exclusion from vital health services, housing, employment, education, insurance, legal protection, and social assistance.;
+(n)!;
+
+
+
+(i)29;
+(s)Medical Ethics Dog!;
+(l)Oh no! You've been foiled by Forced Sterilization of Intersex People.;
+(n)*30;
+
+(i)30;
+(s)Medical Ethics Dog!;
+(l)Intersex people—meaning people born with physical anatomy that does not fit typical definitions of male or female, about 1% of the population—are often subjected to non-medically necessary surgeries at birth which can render them sterile.;
+(n)*31;
+
+(i)31;
+(s)Medical Ethics Dog!;
+(l)Infants cannot give informed consent, and parents are often not fully consulted or educated.;
+(n)!;
+
+
+
+(i)32;
+(s)Medical Ethics Dog!;
+(l)Oh no! You've been foiled by Eugenics and the Asexualization Act.;
+(n)*33;
+
+(i)33;
+(s)Medical Ethics Dog!;
+(l)The United States has a shameful history of sterilization and eugenics movements, often targeted at its most vulnerable populations—poor people, immigrants, people of color, the disabled, unmarried women, and the mentally ill.;
+(n)*34;
+
+(i)34;
+(s)Medical Ethics Dog!;
 (l)The Asexualization Act of 1909 allowed California to sterilize over 20,000 people against their will across the course of the 20th century.;
-(n)13;
+(n)!;
+
+
+
+(i)35;
+(s)Medical Ethics Dog!;
+(l)Oh no! You've been foiled by High Maternal Mortality Rates.;
+(n)*36;
+
+(i)36;
+(s)Medical Ethics Dog!;
+(l)The United States has one of the worst maternal death rates in the developed world, making carrying a pregnancy to term unnecessarily dangerous.;
+(n)*37;
+
+(i)37;
+(s)Medical Ethics Dog!;
+(l)Every year 700 to 900 new mothers-to-be die from pregnancy or childbirth-related causes (60% preventable according to a CDC analysis), and 65,000 nearly die.;
+(n)!;
+
+
+
+(i)38;
+(s)Medical Ethics Dog!;
+(l)Oh no! You've been foiled by Criminalization of Pregnancy.;
+(n)*39;
+
+(i)39;
+(s)Medical Ethics Dog!;
+(l)In March of 2017 Amnesty International published a report on the increasing criminalization of pregnant woman, describing unjust ways in which pregnancy is policed in the United States.;
+(n)*40;
+
+(i)40;
+(s)Medical Ethics Dog!;
+(l)Many states have "fetal assault" laws that let doctors perform drug tests at their discretion, and arrest and prosecute women who experience pregnancy complications and conditions such as drug dependence.;
+(n)*41;
+
+(i)41;
+(s)Medical Ethics Dog!;
+(l)Paired with a lack of affordable addiction treatment and mental healthcare, this treats a health condition as a crime and discourages pregnant women from seeking necessary medical care.;
+(n)!;
