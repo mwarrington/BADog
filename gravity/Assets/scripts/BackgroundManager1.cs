@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackgroundManager : MonoBehaviour {
+public class BackgroundManager1 : MonoBehaviour, iPausable
+{
+
+    private GameManager _theGameManager;
+    private float _timer = 34f;
+    private bool _paused = false;
 
     public GameObject[] BackgroundPrefabs;
-    private float _timer = 34f;
 
     void DestroyAdd(Collider2D col)
     {
@@ -21,8 +25,16 @@ public class BackgroundManager : MonoBehaviour {
         }
     }
 
+    void Start()
+    {
+        _theGameManager = GameManager.TheGameManager;
+        _theGameManager.AddToPausables(this);
+
+    }
+
     void Update()
     {
+        if (!_paused)
             _timer -= Time.deltaTime;
     }
 
@@ -31,5 +43,10 @@ public class BackgroundManager : MonoBehaviour {
         {
             DestroyAdd(col);
         }
+    }
+
+    public void TogglePause()
+    {
+        _paused = !_paused;
     }
 }
