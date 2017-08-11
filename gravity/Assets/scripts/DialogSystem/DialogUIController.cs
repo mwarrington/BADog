@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -70,7 +71,8 @@ public class DialogUIController : MonoBehaviour
                  _inDialogBox,
                  _inDialogOptions,
                  _option1Highlighted,
-                 _isTyping;
+                 _isTyping,
+                 _restartGame;
 
     void Start()
     {
@@ -95,9 +97,15 @@ public class DialogUIController : MonoBehaviour
     }
 
     //Call this method which takes an int that represents the desired dialog line index at which to begin/continue the dialog.
-    public void OpenDialog(int index)
+    public void OpenDialog(int index, bool restartGameAtEnd)
     {
-        _inDialog = true;
+        if (!_inDialog)
+        {
+            _restartGame = restartGameAtEnd;
+            _inDialog = true;
+            GameManager.TheGameManager.WorldPause();
+        }
+
         _currentDialogLine = _dialogManager.CurrentDialogLines[index];
         _dialogBoxObject.SetActive(true);
         _dialogOptionsObject.SetActive(false);
@@ -156,7 +164,7 @@ public class DialogUIController : MonoBehaviour
                 }
                 else
                 {
-                    OpenDialog(_currentDialogLine.NextDialogLine);
+                    OpenDialog(_currentDialogLine.NextDialogLine, false);
                 }
             }
         }
@@ -175,7 +183,7 @@ public class DialogUIController : MonoBehaviour
                 {
                     if (_curretDialogOptions.FollowUpLine1 != -1)
                     {
-                        OpenDialog(_curretDialogOptions.FollowUpLine1);
+                        OpenDialog(_curretDialogOptions.FollowUpLine1, false);
                     }
                     else
                     {
@@ -186,7 +194,7 @@ public class DialogUIController : MonoBehaviour
                 {
                     if (_curretDialogOptions.FollowUpLine2 != -1)
                     {
-                        OpenDialog(_curretDialogOptions.FollowUpLine2);
+                        OpenDialog(_curretDialogOptions.FollowUpLine2, false);
                     }
                     else
                     {
@@ -204,7 +212,9 @@ public class DialogUIController : MonoBehaviour
         GameManager.TheGameManager.WorldPause();
         _dialogBoxObject.SetActive(false);
         _dialogOptionsObject.SetActive(false);
-        _medog.HideMeDog();
+
+        if (_restartGame)
+            SceneManager.LoadScene("Start");
     }
 
     IEnumerator TypeText()

@@ -15,14 +15,16 @@ public class MEDogController : MonoBehaviour
         {
             if(_visible != value)
             {
-                if (value)
-                {
+                _myRenderer.enabled = value;
 
-                }
-                else
-                {
-
-                }
+                //if (value)
+                //{
+                //    _myRenderer.enabled = true;
+                //}
+                //else
+                //{
+                //    _myRenderer.enabled = false;
+                //}
 
                 _visible = value;
             }
@@ -31,10 +33,12 @@ public class MEDogController : MonoBehaviour
     private bool _visible;
 
     private DialogUIController _dialogUIController;
+    private SpriteRenderer _myRenderer;
 
     void Start()
     {
         _dialogUIController = FindObjectOfType<DialogUIController>();
+        _myRenderer = this.GetComponent<SpriteRenderer>();
     }
     
     void Update()
@@ -45,7 +49,7 @@ public class MEDogController : MonoBehaviour
     public void ObstacleHit(int obstIndex)
     {
         visible = true;
-        _dialogUIController.OpenDialog(obstIndex);
+        _dialogUIController.OpenDialog(obstIndex, true);
     }
 
     public void HideMeDog()
