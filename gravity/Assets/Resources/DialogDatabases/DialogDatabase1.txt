@@ -11,7 +11,7 @@
 
 (i)1;
 (s)Medical Ethics Dog!;
-(l)I heard you’re pregnant—that’s so cool! What a marvel of the canine body.;
+(l)I heard you’re pregnant — that’s so cool! What a marvel of the canine body.;
 (n)*2;
 
 (i)2;

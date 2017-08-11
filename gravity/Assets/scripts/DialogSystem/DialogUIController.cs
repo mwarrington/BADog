@@ -170,8 +170,8 @@ public class DialogUIController : MonoBehaviour
         }
         else if (_inDialogOptions) //This bit handles player inputs while in dialog options
         {
-            //Pressing either up or down will swap which dialog option is set to be selected
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+            //Pressing either left or right will swap which dialog option is set to be selected
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 option1Highlighted = !option1Highlighted;
             }
