@@ -39,8 +39,17 @@ public class DialogManager : MonoBehaviour
                 {
                     i += 2;
 
-                    _currentLine = int.Parse(CurrentDialogDatabase.text[i].ToString());
-                    CurrentDialogLines.Add(new DialogLine(_currentLine, "", "", -1));
+                    if (CurrentDialogDatabase.text[i + 1] == ';')
+                    {
+                        _currentLine = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                        CurrentDialogLines.Add(new DialogLine(_currentLine, "", "", -1));
+                    }
+                    else
+                    {
+                        string index = "" + CurrentDialogDatabase.text[i] + CurrentDialogDatabase.text[i + 1];
+                        _currentLine = int.Parse(index);
+                        CurrentDialogLines.Add(new DialogLine(_currentLine, "", "", -1));
+                    }
                     i += 2;
                     continue;
                 }
@@ -50,8 +59,17 @@ public class DialogManager : MonoBehaviour
                 {
                     i += 2;
 
-                    _currentDO = int.Parse(CurrentDialogDatabase.text[i].ToString());
-                    CurrentDialogOptionsList.Add(new DialogOptions(_currentDO, -1, -1, "", ""));
+                    if (CurrentDialogDatabase.text[i + 1] == ';')
+                    {
+                        _currentDO = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                        CurrentDialogOptionsList.Add(new DialogOptions(_currentDO, -1, -1, "", ""));
+                    }
+                    else
+                    {
+                        string index = "" + CurrentDialogDatabase.text[i] + CurrentDialogDatabase.text[i + 1];
+                        _currentDO = int.Parse(index);
+                        CurrentDialogOptionsList.Add(new DialogOptions(_currentDO, -1, -1, "", ""));
+                    }
                     i += 2;
                     continue;
                 }
@@ -83,10 +101,25 @@ public class DialogManager : MonoBehaviour
                     else if(CurrentDialogDatabase.text[i] == '*')
                     {
                         i++;
-                        CurrentDialogLines[_currentLine].NextDialogLine = int.Parse(CurrentDialogDatabase.text[i].ToString());
+
+                        if (CurrentDialogDatabase.text[i + 1] == ';')
+                            CurrentDialogLines[_currentLine].NextDialogLine = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                        else
+                        {
+                            string index = "" + CurrentDialogDatabase.text[i] + CurrentDialogDatabase.text[i + 1];
+                            CurrentDialogLines[_currentLine].NextDialogLine = int.Parse(index);
+                        }
                     }
                     else
-                        CurrentDialogLines[_currentLine].NextDialogOptionsIndex = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                    {
+                        if (CurrentDialogDatabase.text[i + 1] == ';')
+                            CurrentDialogLines[_currentLine].NextDialogOptionsIndex = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                        else
+                        {
+                            string index = "" + CurrentDialogDatabase.text[i] + CurrentDialogDatabase.text[i + 1];
+                            CurrentDialogLines[_currentLine].NextDialogOptionsIndex = int.Parse(index);
+                        }
+                    }
 
                     i += 2;
                     continue;
@@ -114,7 +147,15 @@ public class DialogManager : MonoBehaviour
 
                     //if this value is set to '!' the next dialog line value will be set at -1 which means this dialog option ends the dialog
                     if (CurrentDialogDatabase.text[i] != '!')
-                        CurrentDialogOptionsList[_currentDO].FollowUpLine1 = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                    {
+                        if (CurrentDialogDatabase.text[i + 1] == ';')
+                            CurrentDialogOptionsList[_currentDO].FollowUpLine1 = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                        else
+                        {
+                            string index = "" + CurrentDialogDatabase.text[i] + CurrentDialogDatabase.text[i + 1];
+                            CurrentDialogOptionsList[_currentDO].FollowUpLine1 = int.Parse(index);
+                        }
+                    }
                     else
                         CurrentDialogOptionsList[_currentDO].FollowUpLine1 = -1;
 
@@ -129,7 +170,15 @@ public class DialogManager : MonoBehaviour
 
                     //if this value is set to '!' the next dialog line value will be set at -1 which means this dialog option ends the dialog
                     if (CurrentDialogDatabase.text[i] != '!')
-                        CurrentDialogOptionsList[_currentDO].FollowUpLine2 = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                    {
+                        if (CurrentDialogDatabase.text[i + 1] == ';')
+                            CurrentDialogOptionsList[_currentDO].FollowUpLine2 = int.Parse(CurrentDialogDatabase.text[i].ToString());
+                        else
+                        {
+                            string index = "" + CurrentDialogDatabase.text[i] + CurrentDialogDatabase.text[i + 1];
+                            CurrentDialogOptionsList[_currentDO].FollowUpLine2 = int.Parse(index);
+                        }
+                    }
                     else
                         CurrentDialogOptionsList[_currentDO].FollowUpLine2 = -1;
 

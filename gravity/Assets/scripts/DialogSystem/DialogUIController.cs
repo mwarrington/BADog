@@ -49,6 +49,7 @@ public class DialogUIController : MonoBehaviour
 
     public float TypeSpeed = 1;
 
+    private MEDogController _medog;
     private IEnumerator _typingCoroutine;
     private DialogManager _dialogManager;
     private GameObject _dialogBoxObject,
@@ -74,6 +75,7 @@ public class DialogUIController : MonoBehaviour
     void Start()
     {
         _dialogManager = FindObjectOfType<DialogManager>();
+        _medog = FindObjectOfType<MEDogController>();
 
         //Setting the value of dialog UI components
         _textBoxImage = GameObject.Find("DialogToNPCPoint/DialogBox").GetComponent<Image>();
@@ -202,6 +204,7 @@ public class DialogUIController : MonoBehaviour
         GameManager.TheGameManager.WorldPause();
         _dialogBoxObject.SetActive(false);
         _dialogOptionsObject.SetActive(false);
+        _medog.HideMeDog();
     }
 
     IEnumerator TypeText()
