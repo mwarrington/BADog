@@ -77,3 +77,18 @@
 (2)I'm a good dog!;
 (o)!;
 (t)!;
+
+(i)10;
+(s)Medical Ethics Dog!;
+(l)Oh no! Bodily Autonomy Dog! has been foiled by High Maternal Mortality Rates.;
+(n)11;
+
+(i)11;
+(s)Medical Ethics Dog!;
+(l)The United States has a shameful history of sterilization and eugenics movements, often targeted at its most vulnerable populations—poor people, immigrants, people of color, the disabled, unmarried women, and the mentally ill.;
+(n)12;
+
+(i)12;
+(s)Medical Ethics Dog!;
+(l)The Asexualization Act of 1909 allowed California to sterilize over 20,000 people against their will across the course of the 20th century.;
+(n)13;
