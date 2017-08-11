@@ -102,7 +102,7 @@
 
 (i)14;
 (s)Medical Ethics Dog!;
-(l)Legalizing abortion doesn't automatically make it accessible—in 2008, Americans accessing abortion services traveled an average of 30 miles. This can present a particular barrier for low-income and rural women.;
+(l)Legalizing abortion doesn't automatically make it accessible — in 2008, Americans accessing abortion services traveled an average of 30 miles. This can present a particular barrier for low-income and rural women.;
 (n)!;
 
 
@@ -165,7 +165,7 @@
 
 (i)25;
 (s)Medical Ethics Dog!;
-(l)This is wildly coercive—inmates cannot provide informed consent, and are incentivized to give up their reproductive freedom.;
+(l)This is wildly coercive — inmates cannot provide informed consent, and are incentivized to give up their reproductive freedom.;
 (n)!;
 
 
@@ -194,7 +194,7 @@
 
 (i)30;
 (s)Medical Ethics Dog!;
-(l)Intersex people—meaning people born with physical anatomy that does not fit typical definitions of male or female, about 1% of the population—are often subjected to non-medically necessary surgeries at birth which can render them sterile.;
+(l)Intersex people — meaning people born with physical anatomy that doesn't fit typical definitions of male or female, about 1% of the population — are often subjected to non-medically necessary surgeries at birth which can render them sterile.;
 (n)*31;
 
 (i)31;
@@ -211,7 +211,7 @@
 
 (i)33;
 (s)Medical Ethics Dog!;
-(l)The United States has a shameful history of sterilization and eugenics movements, often targeted at its most vulnerable populations—poor people, immigrants, people of color, the disabled, unmarried women, and the mentally ill.;
+(l)The United States has a shameful history of sterilization and eugenics movements, often targeted at its most vulnerable populations — poor people, immigrants, people of color, the disabled, unmarried women, and the mentally ill.;
 (n)*34;
 
 (i)34;
