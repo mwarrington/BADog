@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         TheGameManager = this;
+        allPausables.Clear();
     }
 
     //This method will pause all pausable scritps

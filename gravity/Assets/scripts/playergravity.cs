@@ -18,6 +18,9 @@ public class playergravity : MonoBehaviour, iPausable
 
         if (_paused)
         {
+            if(!_myRigidbody)
+                _myRigidbody = this.GetComponent<Rigidbody2D>();
+
             _lastGravityValue = Physics2D.gravity.y;
             _lastVelocity = _myRigidbody.velocity.y;
             Physics2D.gravity = Vector2.zero;
@@ -30,15 +33,17 @@ public class playergravity : MonoBehaviour, iPausable
         }
     }
 
-    // Use this for initialization
-    void Start () {
+    private void Awake()
+    {
         _myRigidbody = this.GetComponent<Rigidbody2D>();
+    }
+
+    void Start () {
         _bark = GetComponent<AudioSource>();
         _theGameManager = GameManager.TheGameManager;
         _theGameManager.AddToPausables(this);
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
 	    if (Input.GetKeyDown(KeyCode.Space) && !_paused)
